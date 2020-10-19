@@ -6,10 +6,9 @@ public class TesteFazenda {
 	public static void main(String[] args) throws InterruptedException {
 
 		int acorda;
-		int play;
+		int play=0;
 		int dia;
 		boolean fim = true;
-		int opInvalida = 1;
 
 		Scanner ler = new Scanner(System.in);
 
@@ -20,12 +19,12 @@ public class TesteFazenda {
 		Pintinho p = new Pintinho();
 		Porquinho pig = new Porquinho();
 		
-		System.out.println("Escolha o período do dia: \n");
-		System.out.println("Digite 1 se for dia ou digite 2 se for noite: ");
-		dia = ler.nextInt();
+
 		
 		do {
-
+			System.out.println("Escolha o período do dia: \n");
+			System.out.println("Digite 1 se for dia ou digite 2 se for noite: ");
+			dia = ler.nextInt();
 		switch(dia) {
 		
 		case 1:
@@ -73,7 +72,7 @@ public class TesteFazenda {
 				v.getImagem();
 				
 				Thread.sleep(3000);
-				while(opInvalida != 0) {
+				while(play != 1) {
 					System.out.println("\nDigite: 1 - para dar play na galinha");
 					play = ler.nextInt();
 					
@@ -181,15 +180,13 @@ public class TesteFazenda {
 			
 		case 2:
 			System.out.println("Volte quando amanhecer. Boa noite!");
-			
 			break;
 			
 		default:
-			System.out.println("Ainda não amanheceu na fazendinha! :(");
-			
+			System.out.println("Ainda não amanheceu na fazendinha! :(\n");
+
 		}
-		opInvalida = 0;
-		}while(opInvalida!=0);
+		}while(dia != 0);
 	}
 }
 
